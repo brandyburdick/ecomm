@@ -41,8 +41,17 @@ RSpec.describe Product, type: :model do
 	    product = FactoryGirl.build(:product, quantity: -1)
 
 	    expect(product).to_not be_valid
+		end
+	end
+
+	describe "price" do
+	  it "cannot have 3 or more numbers after the decimal point" do
+	    product = FactoryGirl.build(:product, price: 78.456)
+
+	    expect(product).to_not be_valid
 	  end
 	end
 end
+
 
 
