@@ -3,6 +3,15 @@ class ProductsController < ApplicationController
   	@product = Product.new
   end
 
+	def create
+  	@product = Product.create(product_params)
+  	if @product.save
+  		redirect_to @product
+  	else
+  		render :new
+  	end
+  end
+
   def index
   end
 
@@ -11,4 +20,5 @@ class ProductsController < ApplicationController
 
   def edit
   end
+
 end

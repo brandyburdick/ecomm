@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  
+  post 'products/create'
+
   get 'products/new'
 
   get 'products/index'

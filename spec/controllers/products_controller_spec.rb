@@ -34,4 +34,20 @@ RSpec.describe ProductsController, type: :controller do
     end
   end
 
+  describe "POST #create" do
+    it "creates a product" do
+      post :create, product: FactoryGirl.attributes_for(:product)
+      expect(Product.count).to eq(1)
+      expect(response).to redirect_to(product_path(assigns[:product]))
+    end
+  end
+
 end
+
+
+
+
+
+
+
+
