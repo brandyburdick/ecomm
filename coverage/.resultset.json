@@ -61,6 +61,13 @@
         null,
         null,
         null,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        null,
         null,
         null,
         null,
@@ -304,7 +311,7 @@
       "/Users/brandyburdick/Desktop/programs/rails-projects/ecomm/spec/factories.rb": [
         1,
         1,
-        1,
+        7,
         1,
         1,
         1,
@@ -380,9 +387,12 @@
         1,
         1,
         1,
+        1,
+        1,
+        null,
         null
       ]
     },
-    "timestamp": 1472055444
+    "timestamp": 1472056112
   }
 }

@@ -14,7 +14,7 @@
       <img src="./assets/0.10.0/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2016-08-24T09:17:24-07:00">2016-08-24T09:17:24-07:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2016-08-24T09:28:32-07:00">2016-08-24T09:28:32-07:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -24,16 +24,16 @@
     (<span class="covered_percent"><span class="green">100.0%</span></span>
      covered at
      <span class="covered_strength">
-       <span class="yellow">
-         1.0
+       <span class="green">
+         1.07
        </span>
     </span> hits/line)
   </h2>
   <a name="AllFiles"></a>
   <div>
     <b>18</b> files in total.
-    <b>82</b> relevant lines. 
-    <span class="green"><b>82</b> lines covered</span> and
+    <b>88</b> relevant lines. 
+    <span class="green"><b>88</b> lines covered</span> and
     <span class="red"><b>0</b> lines missed </span>
   </div>
   <table class="file_list">
@@ -63,9 +63,9 @@
       <tr>
         <td class="strong"><a href="#5570da15ef9e62ac5c1ee3f08b1fb8e9cf1b83f5" class="src_link" title="app/models/product.rb">app/models/product.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>6</td>
-        <td>5</td>
-        <td>5</td>
+        <td>9</td>
+        <td>7</td>
+        <td>7</td>
         <td>0</td>
         <td>1.0</td>
       </tr>
@@ -207,15 +207,15 @@
         <td>7</td>
         <td>7</td>
         <td>0</td>
-        <td>1.0</td>
+        <td>1.9</td>
       </tr>
       
       <tr>
         <td class="strong"><a href="#10bb411cd49e4eee4d6a8e6591e201de1917a5b7" class="src_link" title="spec/models/product_spec.rb">spec/models/product_spec.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>63</td>
-        <td>20</td>
-        <td>20</td>
+        <td>70</td>
+        <td>24</td>
+        <td>24</td>
         <td>0</td>
         <td>1.0</td>
       </tr>
@@ -281,8 +281,8 @@
     <h3>app/models/product.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>5</b> relevant lines. 
-      <span class="green"><b>5</b> lines covered</span> and
+      <b>7</b> relevant lines. 
+      <span class="green"><b>7</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -320,7 +320,25 @@
           <code class="ruby">	validates :description, presence: true</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="6">
+        <li class="covered" data-hits="1" data-linenumber="6">
+          <span class="hits">1</span>
+          
+          <code class="ruby">def self.promoted</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="7">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    where(promoted: true)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="8">
+          
+          
+          <code class="ruby">end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="9">
           
           
           <code class="ruby">end</code>
@@ -1808,28 +1826,28 @@
           <code class="ruby">  factory :product do</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="3">
-          <span class="hits">1</span>
+        <li class="covered" data-hits="7" data-linenumber="3">
+          <span class="hits">7</span>
           
-          <code class="ruby">    name &quot;MyString&quot;</code>
+          <code class="ruby">    sequence(:name) {|num| &quot;#{num} Macbook&quot;}</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="4">
           <span class="hits">1</span>
           
-          <code class="ruby">    quantity 1</code>
+          <code class="ruby">    quantity 10</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="5">
           <span class="hits">1</span>
           
-          <code class="ruby">    price 9.99</code>
+          <code class="ruby">    price 999.99</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="6">
           <span class="hits">1</span>
           
-          <code class="ruby">    description &quot;Description&quot;</code>
+          <code class="ruby">    description &quot;Awesome Computer!&quot;</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="7">
@@ -1859,8 +1877,8 @@
     <h3>spec/models/product_spec.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>20</b> relevant lines. 
-      <span class="green"><b>20</b> lines covered</span> and
+      <b>24</b> relevant lines. 
+      <span class="green"><b>24</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -2219,28 +2237,70 @@
         <li class="never" data-hits="" data-linenumber="59">
           
           
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="60">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  describe &quot;.promoted&quot; do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="61">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    it &quot;returns products that are marked true for front_page&quot; do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="62">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      product_list = FactoryGirl.create_list(:product, 2, promoted: true)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="63">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      expect(Product.promoted).to eq(product_list)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="64">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="65">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="66">
+          
+          
           <code class="ruby">  </code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="60">
+        <li class="never" data-hits="" data-linenumber="67">
           
           
           <code class="ruby">end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="61">
+        <li class="never" data-hits="" data-linenumber="68">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="62">
+        <li class="never" data-hits="" data-linenumber="69">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="63">
+        <li class="never" data-hits="" data-linenumber="70">
           
           
           <code class="ruby"></code>
