@@ -66,6 +66,14 @@ RSpec.describe ProductsController, type: :controller do
     end
   end
 
+  describe "Delete #destroy" do
+    let(:product) {FactoryGirl.create(:product)}
+    it "deletes a product & redirects to the index page" do
+      delete :destroy, id: :product
+      expect(response).to redirect_to(products_path)
+    end
+  end
+  
 end
 
 
