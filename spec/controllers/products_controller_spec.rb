@@ -33,9 +33,14 @@ RSpec.describe ProductsController, type: :controller do
   end
 
   describe "GET #edit" do
+    let(:product) {FactoryGirl.create(:product)}
     it "returns http success" do
       get :edit, id: :product
       expect(response).to have_http_status(:success)
+    end
+    it "assigns requested product to @product" do
+      get :edit, id: :product
+      expect(assigns(:product)).to eq(product)
     end
   end
 
@@ -44,6 +49,20 @@ RSpec.describe ProductsController, type: :controller do
       post :create, product: FactoryGirl.attributes_for(:product)
       expect(Product.count).to eq(1)
       expect(response).to redirect_to(product_path(assigns[:product]))
+    end
+  end
+
+  describe "Put #update" do
+    let(:product) {FactoryGirl.create(:product)}
+    let(:product_params_hash) {FactoryGirl.attributes_for(:product, name: "Chromebook")}
+    it "updates the attributes" do
+      put :update, id: :product, product: product_params_hash
+      product.reload
+      expect(product.name).to eq("Chromebook")
+    end
+    it "redirects_to show" do
+      put :update, id: :product, product: product_params_hash
+      expect(response).to redirect_to(product)
     end
   end
 
