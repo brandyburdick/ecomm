@@ -7,6 +7,10 @@ RSpec.describe ProductsController, type: :controller do
       get :new
       expect(response).to have_http_status(:success)
     end
+    it "assigns @product to a new Product" do
+      get :new
+      expect(assigns(:product)).to be_a_new(Product)
+    end
   end
 
   describe "GET #index" do
