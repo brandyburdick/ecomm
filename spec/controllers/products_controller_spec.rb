@@ -4,11 +4,11 @@ RSpec.describe ProductsController, type: :controller do
 
   describe "GET #new" do
     it "returns http success" do
-      get :new
+      get :new, id: :product
       expect(response).to have_http_status(:success)
     end
     it "assigns @product to a new Product" do
-      get :new
+      get :new, id: :product
       expect(assigns(:product)).to be_a_new(Product)
     end
   end
@@ -21,15 +21,20 @@ RSpec.describe ProductsController, type: :controller do
   end
 
   describe "GET #show" do
+    let(:product) {FactoryGirl.create(:product)}
     it "returns http success" do
-      get :show
+      get :show, id: :product
       expect(response).to have_http_status(:success)
+    end
+    it "assigns requested product to @product" do
+      get :show, id: :product
+      expect(assigns(:product)).to eq(product)
     end
   end
 
   describe "GET #edit" do
     it "returns http success" do
-      get :edit
+      get :edit, id: :product
       expect(response).to have_http_status(:success)
     end
   end
