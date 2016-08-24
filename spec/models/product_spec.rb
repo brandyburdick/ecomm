@@ -56,6 +56,13 @@ RSpec.describe Product, type: :model do
       expect(product).to_not be_valid
     end
   end
+
+  describe ".promoted" do
+    it "returns products that are marked true for front_page" do
+      product_list = FactoryGirl.create_list(:product, 2, promoted: true)
+      expect(Product.promoted).to eq(product_list)
+    end
+  end
   
 end
 

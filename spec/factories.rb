@@ -1,9 +1,9 @@
 FactoryGirl.define do
   factory :product do
-    name "MyString"
-    quantity 1
-    price 9.99
-    description "Description"
+    sequence(:name) {|num| "#{num} Macbook"}
+    quantity 10
+    price 999.99
+    description "Awesome Computer!"
     promoted false
   end
 end
