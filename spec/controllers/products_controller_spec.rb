@@ -11,12 +11,21 @@ RSpec.describe ProductsController, type: :controller do
     before do
       sign_in(user)
     end
+    
     describe "GET #new" do
       it "redirects to root_path" do
         get :new
         expect(response).to redirect_to root_path
       end
     end
+
+    describe "GET #index" do
+      it "redirects to root_path" do
+        get :index
+        expect(response).to redirect_to root_path
+      end
+    end
+    
   end    
 
   context "when admin is logged in" do
