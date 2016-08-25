@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-
+gem 'bootstrap-sass'
 gem 'devise'
 gem 'puma'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
