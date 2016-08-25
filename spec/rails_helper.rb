@@ -29,8 +29,7 @@ ActiveRecord::Migration.maintain_test_schema!
 
 RSpec.configure do |config|
  
-  config.include Devise::Test::ControllerHelpers, type: :controllers
-  config.include Devise::Test::ControllerHelpers, type: :views
+  
 
   # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
      # config.fixture_path = "#{::Rails.root}/spec/fixtures"
@@ -59,4 +58,8 @@ RSpec.configure do |config|
   config.filter_rails_from_backtrace!
   # arbitrary gems may also be filtered via:
   # config.filter_gems_from_backtrace("gem name")
+  # config.include Devise::Test::ControllerHelpers, type: :controllers
+  # config.include Devise::Test::ControllerHelpers, type: :views
+
+  config.include Devise::TestHelpers, :type => :controller
 end

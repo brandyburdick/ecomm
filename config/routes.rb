@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
   
-  get 'welcome/index'
+  get 'index' => 'welcome#index' 
 
   devise_for :users
-  root 'products#index'
+
 
   resources :products
 

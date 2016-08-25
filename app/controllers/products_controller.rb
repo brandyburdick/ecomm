@@ -1,6 +1,6 @@
 class ProductsController < ApplicationController
-  before_action :authenticate_user!
-  before_action :check_for_admin
+  before_action :authenticate_user!, except: :show
+  before_action :check_for_admin, except: :show
 
   def new
   	@product = Product.new
@@ -48,7 +48,7 @@ class ProductsController < ApplicationController
     end
 
     def check_for_admin
-      unless current_user_admin?
+      unless current_user.admin?
         redirect_to root_path
       end
     end
