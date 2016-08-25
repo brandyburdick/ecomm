@@ -1,4 +1,7 @@
 class ProductsController < ApplicationController
+  before_action :authenticate_user!
+  before_action :check_for_admin
+
   def new
   	@product = Product.new
   end
@@ -41,7 +44,13 @@ class ProductsController < ApplicationController
 
   private
     def product_params
-      params.require(:product).permit(:name, :quantity, :price, :description, :promoted)      
+      params.require(:product).permit(:name, :quantity, :price, :description, :promoted)
+    end
+
+    def check_for_admin
+      unless current_user_admin?
+        redirect_to root_path
+      end
     end
 
 end
