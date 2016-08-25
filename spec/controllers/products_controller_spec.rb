@@ -1,5 +1,9 @@
 require 'rails_helper'
 
+def make_a_product
+  let(:product) {FactoryGirl.create(:product)}
+end
+
 RSpec.describe ProductsController, type: :controller do
 
   describe "GET #new" do
@@ -21,25 +25,25 @@ RSpec.describe ProductsController, type: :controller do
   end
 
   describe "GET #show" do
-    let(:product) {FactoryGirl.create(:product)}
+    make_a_product
     it "returns http success" do
-      get :show, id: :product
+      get :show, id: product
       expect(response).to have_http_status(:success)
     end
     it "assigns requested product to @product" do
-      get :show, id: :product
+      get :show, id: product
       expect(assigns(:product)).to eq(product)
     end
   end
 
   describe "GET #edit" do
-    let(:product) {FactoryGirl.create(:product)}
+    make_a_product
     it "returns http success" do
-      get :edit, id: :product
+      get :edit, id: product
       expect(response).to have_http_status(:success)
     end
     it "assigns requested product to @product" do
-      get :edit, id: :product
+      get :edit, id: product
       expect(assigns(:product)).to eq(product)
     end
   end
@@ -53,23 +57,23 @@ RSpec.describe ProductsController, type: :controller do
   end
 
   describe "Put #update" do
-    let(:product) {FactoryGirl.create(:product)}
+    make_a_product
     let(:product_params_hash) {FactoryGirl.attributes_for(:product, name: "Chromebook")}
     it "updates the attributes" do
-      put :update, id: :product, product: product_params_hash
+      put :update, id: product, product: product_params_hash
       product.reload
       expect(product.name).to eq("Chromebook")
     end
     it "redirects_to show" do
-      put :update, id: :product, product: product_params_hash
+      put :update, id: product, product: product_params_hash
       expect(response).to redirect_to(product)
     end
   end
 
   describe "Delete #destroy" do
-    let(:product) {FactoryGirl.create(:product)}
+    make_a_product
     it "deletes a product & redirects to the index page" do
-      delete :destroy, id: :product
+      delete :destroy, id: product
       expect(response).to redirect_to(products_path)
     end
   end
