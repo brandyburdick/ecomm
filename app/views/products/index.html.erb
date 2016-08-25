@@ -13,7 +13,7 @@
 				<td><%= link_to product.name, product_path(product) %></td>
 				<td><%= product.quantity %></td>
 				<td><%= product.description %></td>
-				<td><%= product.price %></td>
+				<td><%= number_to_currency product.price %></td>
 			</tr>
 		<% end %>
 	</table>
