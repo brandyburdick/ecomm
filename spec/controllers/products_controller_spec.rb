@@ -6,11 +6,24 @@ end
 
 RSpec.describe ProductsController, type: :controller do
 
+  context "when NON admin user is logged in" do
+    let(:user) {FactoryGirl.create(:non_admin_user)}
+    before do
+      sign_in(user)
+    end
+    describe "GET #new" do
+      it "redirects to root_path" do
+        get :new
+        expect(response).to redirect_to root_path
+      end
+    end
+  end    
+
   context "when admin is logged in" do
     let(:admin) {FactoryGirl.create(:admin_user)}
-      before do
-        sign_in(admin)
-      end
+    before do
+      sign_in(admin)
+    end
 
     describe "GET #new" do
       it "returns http success" do
