@@ -9,7 +9,7 @@ FactoryGirl.define do
 
   factory :admin_user, class: User do
     name "Admin User"
-    sequence(:email) {|num| "user#{num}@user.com"}
+    sequence(:email) {|num| "admin_user#{num}@user.com"}
     password "password"
     password_confirmation "password"
     admin true
@@ -17,7 +17,7 @@ FactoryGirl.define do
 
   factory :non_admin_user, class: User do
     name "Regular User"
-    sequence(:email) {|num| "user#{num}@user.com"}
+    sequence(:email) {|num| "regular_user#{num}@user.com"}
     password "password"
     password_confirmation "password"
     admin false
