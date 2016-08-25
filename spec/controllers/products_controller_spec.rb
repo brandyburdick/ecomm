@@ -25,7 +25,27 @@ RSpec.describe ProductsController, type: :controller do
         expect(response).to redirect_to root_path
       end
     end
-    
+
+    describe "GET #edit" do
+      make_a_product
+      it "redirects to root_path" do
+        get :edit, id: product
+        expect(response).to redirect_to root_path
+      end
+    end
+
+    describe "GET #show" do
+      make_a_product
+      it "returns http success" do
+        get :show, id: product
+        expect(response).to have_http_status(:success)
+      end
+      it "assigns requested product to @product" do
+        get :show, id: product
+        expect(assigns(:product)).to eq(product)
+      end
+    end
+
   end    
 
   context "when admin is logged in" do
