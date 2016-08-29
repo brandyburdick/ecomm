@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   
+  get 'carts/show'
+
   get 'index' => 'welcome#index' 
 
   get 'carts/:id' => 'carts#show', as: :cart
