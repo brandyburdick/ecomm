@@ -2,8 +2,11 @@ Rails.application.routes.draw do
   
   get 'index' => 'welcome#index' 
 
-  devise_for :users
+  get 'carts/:id' => 'carts#show', as: :cart
 
+  post 'carts' => 'carts#index'
+
+  devise_for :users
 
   resources :products
 
