@@ -1,2 +1,39 @@
-<h1>Welcome#index</h1>
-<p>Find me in app/views/welcome/index.html.erb</p>
+<h1>Welcome to Tech Talent Store!</h1>
+
+<div class="row">
+  <% @products.each do |product| %>
+    <div class="col-xs-12 col-md-4">
+      <div class="panel panel-default">
+        <div class="panel-body">
+          <!-- Button trigger modal -->
+          <p>
+            <a href="#" data-toggle="modal"
+                         data-target="#myModal_<%= product.id %>">
+              <span class="glyphicon glyphicon-plus"></span> Quick Info </a>
+          </p>
+          <p><strong><%= number_to_currency product.price %></strong></p>
+          <p><%= product.name %></p>
+          <div style="height:150px;">
+            <p><%= product.description %></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="myModal_<%= product.id %>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+            <h4 class="modal-title" id="myModalLabel"><%= product.name %></h4>
+          </div>
+          <div class="modal-body">
+            <p><%= number_to_currency product.price %></p>
+            <p><%= product.description %></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
