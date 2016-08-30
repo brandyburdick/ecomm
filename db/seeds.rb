@@ -13,3 +13,15 @@ products = Product.create([
 	{name: "Chromebook", price: 800.99, description: "Amazing Value", promoted: true, quantity: 11}
 	])
 
+Category.delete_all
+categories = Category.create([{ name: 'Computers'},
+                              { name: 'Televisions'},
+                              { name: 'Smart Phones'},
+                              { name: 'Stereos'},
+                              { name: 'Speakers'},
+                              { name: 'Tablets'},
+                              { name: 'Monitors'},
+                              { name: 'Car Audio'},
+                              { name: 'Outdoor'},
+                              { name: 'Sports'},
+                              { name: 'Consoles'}])
