@@ -1,2 +1,12 @@
-<h1>Products#show</h1>
-<p>Find me in app/views/products/show.html.erb</p>
+<h1><%= @product.name %></h1>
+
+<p><strong>Price: </strong></p>
+<p><%= @product.price %></p>
+
+<p><strong>Description: </strong></p>
+<p><%= @product.description %></p>
+
+<p><strong>Inventory:</strong></p>
+<p><%= @product.quantity %></p>
+
+<%=button_to 'Add to Cart', line_items_path(product_id: @product.id), class: "btn btn-success btn-sm"%>
