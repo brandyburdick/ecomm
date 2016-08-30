@@ -10,6 +10,8 @@ Rails.application.routes.draw do
 
   post 'line_items' => 'products#line_item_create'
 
+  post 'order_complete' => 'carts#order_complete'
+
   devise_for :users
 
   resources :products
