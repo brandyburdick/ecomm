@@ -7,7 +7,6 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 Product.delete_all
-
 products = Product.create([
 	{name: "Macbook", price: 1000.24, description: "Great Buy", promoted: true, quantity: 24},
 	{name: "Chromebook", price: 800.99, description: "Amazing Value", promoted: true, quantity: 11}
