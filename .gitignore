@@ -14,3 +14,5 @@
 
 # Ignore our test coverage info
 coverage
+# Ignore application configuration
+/config/application.yml

@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
+gem 'figaro'
 gem 'bootstrap-sass'
 gem 'devise'
 gem 'puma'
