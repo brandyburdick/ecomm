@@ -8,6 +8,8 @@ Rails.application.routes.draw do
 
   post 'carts' => 'carts#index'
 
+  post 'line_items' => 'products#line_item_create'
+
   devise_for :users
 
   resources :products
