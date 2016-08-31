@@ -1,28 +1,3 @@
 <h1>New Product</h1>
 
-<%= form_for @product do |f| %>
-	
-	<%= f.text_field :name, class: "form-control", placeholder: "Product Name", autofocus: true %> 
-	
-	<br/>
-
-	<%= f.text_field :description, class: "form-control", placeholder: "Product Description" %>
-
-	<br/>
-
-	<div class="form-horizontal">
-		<%= f.label "Inventory", class: "col-sm-2" %>
-		<%= f.number_field :quantity, class: "form-control col-sm-2", placeholder: 10 %>
-	</div>
-
-	<br/>
-	<br/>
-
-	<div class="form-horizontal">
-		<%= f.label :price, class: "col-sm-2" %>
-		<%= f.number_field :price, class: "form-control col-sm-2", placeholder: 10.00, step: 0.01 %>
-		<br/>
-	</div>
-
-	<%= f.submit %>
-<% end %>
+<%= render 'form' %>
