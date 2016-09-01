@@ -2,10 +2,6 @@ Rails.application.routes.draw do
   
   root 'storefront#all_items'
 
-  get 'categorical' => 'storefront#items_by_category' 
-
-  get 'branding' => 'storefront#items_by_brand'
-
   get 'storefront/all_items'
 
   get 'storefront/items_by_category'
@@ -13,14 +9,18 @@ Rails.application.routes.draw do
   get 'storefront/items_by_brand'
 
   get 'carts/show'
+ 
+  get 'categorical'     => 'storefront#items_by_category' 
 
-  get 'index' => 'welcome#index' 
+  get 'branding'        => 'storefront#items_by_brand'
 
-  get 'carts/:id' => 'carts#show', as: :cart
+  get 'index'           => 'welcome#index' 
 
-  post 'carts' => 'carts#index'
+  get 'carts/:id'       => 'carts#show', as: :cart
 
-  post 'line_items' => 'products#line_item_create'
+  post 'carts'          => 'carts#index'
+
+  post 'line_items'     => 'products#line_item_create'
 
   post 'order_complete' => 'carts#order_complete'
 
